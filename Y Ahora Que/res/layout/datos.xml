@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="end" >
+
+    <ImageView
+        android:id="@+id/fondomono"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondomono"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/nubepensamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"        
+        android1:layout_marginBottom="90dp"
+        android:src="@drawable/nubepensamiento"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/bordernaranja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bordernaranja"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android1:id="@+id/logoesquina"
+        android1:layout_width="wrap_content"
+        android1:layout_height="120dp"
+        android1:layout_alignParentBottom="true"
+        android1:layout_alignParentRight="true"
+        android:gravity="right|bottom"
+        android:paddingRight="-20dp"
+        android1:src="@drawable/logopensativocortado"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/bordernaranja2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/bordernaranja"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android1:id="@+id/botonsiguiente"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_centerHorizontal="true"
+        android1:layout_centerVertical="true"
+        android1:background="@drawable/botonsiguiente" />
+
+    <Button
+        android1:id="@+id/botontranquilo"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_above="@+id/botonsiguiente"
+        android1:layout_marginBottom="7dp"
+        android1:layout_marginLeft="10dp"
+        android1:layout_marginRight="2dp"
+        android1:layout_marginTop="10dp"
+        android1:layout_toLeftOf="@+id/botonemocionante"
+        android1:background="@drawable/botontranquilo" />
+
+    <Button
+        android1:id="@+id/botonemocionante"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_alignBaseline="@+id/botontranquilo"
+        android1:layout_alignBottom="@+id/botontranquilo"
+        android1:layout_alignRight="@+id/nubepensamiento"
+        android1:layout_marginRight="35dp"
+        android1:layout_marginTop="10dp"
+        android1:background="@drawable/botonemocionante" />
+
+    <Button
+        android1:id="@+id/botoncalor"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_above="@+id/botonemocionante"
+        android1:layout_alignLeft="@+id/botonemocionante"
+        android1:layout_marginBottom="46dp"
+        android1:layout_marginLeft="2dp"
+        android1:layout_marginTop="10dp"
+        android1:background="@drawable/botoncalor" />
+
+    <Button
+        android1:id="@+id/botonfrio"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_alignBaseline="@+id/botoncalor"
+        android1:layout_alignBottom="@+id/botoncalor"
+        android1:layout_marginRight="2dp"
+        android1:layout_marginTop="10dp"
+        android1:layout_toLeftOf="@+id/botoncalor"
+        android1:background="@drawable/botonfrio" />
+
+    <Button
+        android1:id="@+id/botonexterior"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_alignLeft="@+id/botonemocionante"
+        android1:layout_below="@+id/botonfrio"
+        android1:layout_marginLeft="2dp"
+        android1:layout_marginTop="10dp"
+        android1:background="@drawable/botonexterior" />
+
+    <Button
+        android1:id="@+id/botoninterior"
+        android1:layout_width="95dip"
+        android1:layout_height="33dip"
+        android1:layout_alignBaseline="@+id/botonexterior"
+        android1:layout_alignBottom="@+id/botonexterior"
+        android1:layout_marginRight="2dp"
+        android1:layout_marginTop="10dp"
+        android1:layout_toLeftOf="@+id/botonexterior"
+        android1:background="@drawable/botoninterior" />
+
+</RelativeLayout>

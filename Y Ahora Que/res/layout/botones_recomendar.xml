@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal" >
+
+    <TextView
+        android:id="@+id/instruccionesBotones_recomendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:text="Condiciones para esta actividad:" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/botonnoche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="36dp"
+            android:background="@drawable/botonnoche" />
+
+        <Button
+            android:id="@+id/botonsolo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="44dp"
+            android:layout_toLeftOf="@+id/botonnoche"
+            android:background="@drawable/botonsolo" />
+
+        <Button
+            android:id="@+id/botongrupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/botonsolo"
+            android:layout_alignBottom="@+id/botonsolo"
+            android:layout_toRightOf="@+id/botonsolo"
+            android:background="@drawable/botongrupo" />
+
+        <Button
+            android:id="@+id/botondia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/botonsolo"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/botondia" />
+
+        <Button
+            android:id="@+id/botonexterior2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/botongrupo"
+            android:layout_below="@+id/botongrupo"
+            android:background="@drawable/botonexterior" />
+
+        <Button
+            android:id="@+id/botoninterior2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/botonsolo"
+            android:layout_below="@+id/botonsolo"
+            android:background="@drawable/botoninterior" />
+
+        <Button
+            android:id="@+id/botonenviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/botonexterior2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/botonenviar" />
+
+        <ImageView
+            android:id="@+id/bordernaranja2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/bordernaranja" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,323 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical" >
+
+    <ImageView
+        android:id="@+id/fondorecom1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/recomfondo1" 
+        android:layout_below="@+id/fondorecom2"/>
+    
+    <ImageView
+        android:id="@+id/fondorecom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/recomfondo1"
+        android:layout_below="@+id/fondorecom3" />
+    
+    <ImageView
+        android:id="@+id/fondorecom3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/recomfondo1" />
+
+   <!--  <Button
+        android:id="@+id/button1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/botonspam" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="25dp"
+        android:layout_height="18dp"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:background="@drawable/botoncompartir" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/button3"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/button4"
+        android:background="@drawable/botonmegusta" />
+
+    <! Botones del segundo bloque >
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/botonspam" />
+
+
+
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="25dp"
+        android:layout_height="18dp"
+        android:layout_alignBaseline="@+id/button5"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_marginRight="3.5dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:background="@drawable/botoncompartir" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button6"
+        android:layout_alignBottom="@+id/button6"
+        android:layout_toLeftOf="@+id/button3"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button7"
+        android:layout_alignBottom="@+id/button7"
+        android:layout_toLeftOf="@+id/button4"
+        android:background="@drawable/botonmegusta" />
+
+    <! Botones del tercer bloque >
+<!
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignRight="@+id/button5"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/botonspam" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="25dp"
+        android:layout_height="18dp"
+        android:layout_alignBaseline="@+id/button8"
+        android:layout_alignBottom="@+id/button8"
+        android:layout_alignLeft="@+id/button6"
+        android:background="@drawable/botoncompartir" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button9"
+        android:layout_alignBottom="@+id/button9"
+        android:layout_alignRight="@+id/button7"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/button10"
+        android:layout_alignBottom="@+id/button10"
+        android:layout_alignLeft="@+id/button11"
+        android:background="@drawable/botonmegusta" />
+-->
+    <TextView
+        android:id="@+id/titulo1pag1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fondorecom1"
+        android:gravity="center"        
+        android:textSize="20sp" 
+        android:textColor="#FFF"/>
+    
+        <TextView
+        android:id="@+id/titulo2pag1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fondorecom2"
+        android:gravity="center"        
+        android:textSize="20sp" 
+        android:textColor="#FFF"/>
+
+            <TextView
+        android:id="@+id/titulo3pag1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fondorecom3"
+        android:gravity="center"        
+        android:textSize="20sp" 
+        android:textColor="#FFF"/>
+        
+    <TextView
+        android:id="@+id/recom1pag1"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="..."
+        android:textColor="#AAA"
+        android:textSize="15sp"
+        android:layout_below="@+id/titulo1pag1" />
+    
+    
+    <TextView
+        android:id="@+id/recom2pag1"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="..."
+        android:textColor="#AAA"
+        android:textSize="15sp"
+        android:layout_below="@+id/titulo2pag1" />
+    
+    <TextView
+        android:id="@+id/recom3pag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="..."
+        android:textColor="#AAA"
+        android:textSize="15sp"
+        android:layout_below="@+id/titulo3pag1" />
+    
+    
+    <!-- 
+    <TextView
+        android:id="@+id/recom3pag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#AAA"
+        android:textSize="15sp"
+        android:layout_below="@+id/titulo3pag1" /> -->
+    
+      <!--  Botones de arriba -->
+    
+    <Button
+        android:id="@+id/bspam1pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/fondorecom3"
+		android:layout_alignRight="@+id/recom2pag1"
+		android:layout_marginBottom="11dp"
+		android:layout_marginRight="2dp"
+        android:background="@drawable/botonspam" />
+    
+    <Button
+        android:id="@+id/bnomegusta1pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bspam1pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bspam1pag1"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:id="@+id/bmegusta1pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bnomegusta1pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bnomegusta1pag1"
+        android:background="@drawable/botonmegusta" />
+    
+    <!--  Botones de en medio -->
+    
+     <Button
+        android:id="@+id/bspam2pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/fondorecom2"
+		android:layout_alignRight="@+id/recom2pag1"
+		android:layout_marginBottom="11dp"
+		android:layout_marginRight="2dp"
+        android:background="@drawable/botonspam" />
+    
+    <Button
+        android:id="@+id/bnomegusta2pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bspam2pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bspam2pag1"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:id="@+id/bmegusta2pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bnomegusta2pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bnomegusta2pag1"
+        android:background="@drawable/botonmegusta" />
+    
+     <!--  Botones de hasta abajo -->
+    
+     <Button
+        android:id="@+id/bspam3pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/fondorecom1"
+		android:layout_alignRight="@+id/recom2pag1"
+		android:layout_marginBottom="11dp"
+		android:layout_marginRight="2dp"
+        android:background="@drawable/botonspam" />
+    
+    <Button
+        android:id="@+id/bnomegusta3pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bspam3pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bspam3pag1"
+        android:background="@drawable/botonnomegusta" />
+
+    <Button
+        android:id="@+id/bmegusta3pag1"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/bnomegusta3pag1"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/bnomegusta3pag1"
+        android:background="@drawable/botonmegusta" />
+
+
+</RelativeLayout>

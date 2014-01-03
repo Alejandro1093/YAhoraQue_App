@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fondo_1"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal" > -->
+        	
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:facebook="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_horizontal"
+      android:background="@drawable/fondo_1" >
+        
+            <ImageView
+                android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+                android:src="@drawable/bordernaranja"
+                android:id="@+id/bordernaranja"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-2dp"/>
+
+             <ImageView
+                 android:id="@+id/yahoraque"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_below="@+id/bordernaranja"
+                 android:layout_marginTop="25dp"
+                 android:src="@drawable/yahoraque" />
+
+             <ImageView
+                 android:id="@+id/bordernaranja2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentLeft="true"
+                 android:src="@drawable/bordernaranja" />
+
+             <include                 
+                 layout="@layout/tutorial" />
+
+             
+            <com.facebook.widget.LoginButton
+                android:id="@+id/buttonLoginLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                facebook:confirm_logout="false"
+                facebook:fetch_user_info="true"  
+                xmlns:fb="http://schemas.android.com/apk/res-auto"        	  
+        		android:layout_centerHorizontal="true"        		        	
+        		android:scaleType="centerInside"
+        		android:layout_above="@+id/bordernaranja2"
+                android:layout_marginBottom="25dp"
+                android:contentDescription="Boton para iniciar sesion"
+        		fb:login_text=""
+        		fb:logout_text=""             
+        		
+      			   />        
+                <!--  android:background="@drawable/botonfblogin" />  -->
+
+              <Button
+                  android:id="@+id/flechaderecha1"
+                  android:layout_width="23dp"
+                  android:layout_height="40dp"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:layout_marginRight="15dp"
+                  android:background="@drawable/flechaderecha" />
+
+              <Button
+                  android:id="@+id/flechaizquierda1"
+                  android:layout_width="23dp"
+                  android:layout_height="40dp"
+                  android:layout_alignBaseline="@+id/flechaderecha1"
+                  android:layout_alignBottom="@+id/flechaderecha1"
+                  android:layout_alignParentLeft="true"
+                  android:layout_marginLeft="15dp"
+                  android:background="@drawable/flechaizquierda" />
+
+</RelativeLayout>

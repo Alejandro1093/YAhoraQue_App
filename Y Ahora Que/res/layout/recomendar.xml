@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fondo_1"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/bordernaranja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bordernaranja"
+        android:layout_marginTop="-2dp"  />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="center"
+            android:src="@drawable/yahoraque2" />
+
+        <TextView
+            android:id="@+id/longitudTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="-12dp"
+            android:text="0/30" />
+
+        <EditText
+            android:id="@+id/titulosugerencia"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="15dip"
+            android:hint="Título de la sugerencia"
+            android:maxLength="30"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/longitudDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="-12dp"
+            android:text="0/70" />
+
+        <EditText
+            android:id="@+id/descripcionsugerencia"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Descripción"
+            android:maxLength="70"
+            android:maxLines="5"
+            android:singleLine="false" />
+
+        <TextView
+            android:id="@+id/instruccionesSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="Selecciona una categoría." />
+
+        <Spinner
+            android:id="@+id/spinnercategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categorias"
+            android:prompt="@string/seleccionarcategoria" />
+
+        <include layout="@layout/botones_recomendar" />
+        
+    </LinearLayout>
+
+</RelativeLayout>

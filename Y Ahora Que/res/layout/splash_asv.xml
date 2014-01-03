@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient_splash_background" >
+
+    <ImageView
+        android:id="@+id/bordernaranja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-3dp"
+        android:src="@drawable/bordernaranja" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:gravity="center_horizontal"
+        android:text="Software Desarrollado Por:"
+        android:textColor="#222"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/asv_logo" />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bordernaranja2"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"
+        android:text="&lt;&lt;Los totopos se venden por seprado>>"
+        android:textColor="#333"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:id="@+id/bordernaranja2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/bordernaranja" />
+
+</RelativeLayout>

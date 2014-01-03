@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.yahoraque.www"
+    android:versionCode="3"
+    android:versionName="0.9.1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    
+    <!--  Solicitud de Permisos  -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--  Facebook ID Reference  -->
+    
+    <meta-data
+        android:name="com.facebook.sdk.ApplicationId"
+        android:value="@string/APP_ID" />
+    
+    <!--  Application Manifest  -->
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        
+        	<meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/APP_ID" />
+        	
+        	 <!--  Splash Activity -->
+        
+        <activity
+            android:name="co.yahoraque.www.SplashScreen"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+        <!--  Login Activity -->
+
+        <activity
+            android:name="co.yahoraque.www.Login"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        
+        <!--  Datos Activity -->
+        
+        <activity
+            android:name="co.yahoraque.www.Datos"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!--  Recomendaciones Activity -->
+        <activity
+            android:name="co.yahoraque.www.Recomendaciones"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Styled">
+            </activity>
+            
+        <!--  Recomendar Activity  -->
+        
+        <activity
+            android:name="co.yahoraque.www.Recomendar"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!--  Facebook LoginActivity Reference  -->
+        
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        
+    </application>
+
+</manifest>
