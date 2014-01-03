@@ -1,72 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Frame Layout permite poner una Layout encima de otra
+	 En este caso de las 2 RelativeLayout -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="top" >
+    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/fondomono"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fondomono"
-        tools:ignore="ContentDescription" />
+        android:layout_height="match_parent"
+        android:gravity="top" >
 
-    <ImageView
-        android:id="@+id/bordernaranja"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/bordernaranja"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/fondomono"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fondomono"
+            tools:ignore="ContentDescription" />
 
-    <!--
+        <ImageView
+            android:id="@+id/bordernaranja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bordernaranja"
+            tools:ignore="ContentDescription" />
+
+        <!--
     <include
         android:layout_marginTop="10dp"
         layout="@layout/navbar_fondo" />
-    -->
+        -->
 
-    <Button
-        android:id="@+id/flechaderecha2"
-        android:layout_width="23dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/flechaderecha" />
+        <ImageView
+            android:id="@+id/bordernaranja2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/bordernaranja"
+            tools:ignore="ContentDescription" />
 
-    <ImageView
-        android:id="@+id/bordernaranja2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/bordernaranja"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/yahoraque2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bordernaranja"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/yahoraque2"
+            tools:ignore="ContentDescription" />
 
-    <ImageView
-        android:id="@+id/yahoraque2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bordernaranja"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/yahoraque2"
-        tools:ignore="ContentDescription" />
+        <include
+            android:layout_marginTop="50dp"
+            layout="@layout/swype" />
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/flechaizquierda2"
-        android:layout_width="23dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/flechaizquierda" />
+    <RelativeLayout android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-    <include
-        android:layout_marginTop="50dp"
-        layout="@layout/swype" />
+        <Button
+            android:id="@+id/flechaderecha2"
+            android:layout_width="23dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/flechaderecha" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/flechaizquierda2"
+            android:layout_width="23dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/flechaizquierda" />
+    </RelativeLayout>
+
+</FrameLayout>

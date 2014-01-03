@@ -9,37 +9,36 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-
-//import com.actionbarsherlock.app.SherlockFragmentActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Recomendaciones extends SherlockFragmentActivity implements
-		OnClickListener {
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
+public class Recomendaciones extends SherlockFragmentActivity {
 
 	// we name the left, middle and right page
 	private static final int PAGE_LEFT = 0;
 	private static final int PAGE_MIDDLE = 1;
 	private static final int PAGE_RIGHT = 2;
+
+	// ViewPager
+	ViewPager viewPager = null;
 
 	private LayoutInflater mInflater;
 	private int mSelectedPageIndex = 1;
@@ -79,6 +78,7 @@ public class Recomendaciones extends SherlockFragmentActivity implements
 	private static final String TAG_USERS_ID = "id_usuarios";
 
 	TextView titulo1, titulo2, titulo3, recom1, recom2, recom3;
+	Button flechaderecha, flechaizquierda;
 
 	int contadorSugerencias = 0;
 	int contadorPaginas = 0;
@@ -131,24 +131,41 @@ public class Recomendaciones extends SherlockFragmentActivity implements
 		// Get listview
 		// ListView lv = (ListView)findViewById(R.id.list);
 
-		Button flechaderecha = (Button) findViewById(R.id.flechaderecha2);
-		flechaderecha.setOnClickListener(this);
-		Button flechaizquierda = (Button) findViewById(R.id.flechaizquierda2);
-		flechaizquierda.setOnClickListener(this);
+		// BOTONES FLECHA
+		// Derecha
+		flechaderecha = (Button) findViewById(R.id.flechaderecha2);
+			//Al hacer click
+		flechaderecha.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// Cambia a la pagina de la derecha con animacion
+				viewPager.setCurrentItem(PAGE_RIGHT, true);
+				return true;
+			}
+		});
 
-		/*
-		 * ultimos.setClickable(false); ultimos.setPressed(true);
-		 */
-
+		// Izquierda
+		flechaizquierda = (Button) findViewById(R.id.flechaizquierda2);
+			//Al hacer click
+		flechaizquierda.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				//Cambia a la pagina de la izquierda con animacion
+				viewPager.setCurrentItem(PAGE_LEFT, true);
+				return true;
+			}
+		});
+		
+		
+		//ViewPgar Setup
 		mInflater = getLayoutInflater();
 		MyagerAdaper adapter = new MyagerAdaper();
 
-		final ViewPager viewPager = (ViewPager) findViewById(R.id.swype);
+		viewPager = (ViewPager) findViewById(R.id.swype);
 		viewPager.setAdapter(adapter);
 		// we dont want any smoothscroll. This enables us to switch the page
 		// without the user notifiying this
 		viewPager.setCurrentItem(PAGE_MIDDLE, false);
-
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
 			public void onPageSelected(int position) {
@@ -201,7 +218,6 @@ public class Recomendaciones extends SherlockFragmentActivity implements
 			}
 
 			private void PaginaAvanzaRandom() {
-
 			}
 
 			private void PaginaAtrasRandom() {
@@ -610,26 +626,27 @@ public class Recomendaciones extends SherlockFragmentActivity implements
 
 	// **}
 
-	public void onClick(View v) {
+	// public void onClick(View v) {
+	// viewPager.setCurrentItem(PAGE_MIDDLE, true);
 
-		switch (v.getId()) {
-		/*
-		 * case R.id.botonsugerir:
-		 * 
-		 * Intent i = new Intent(getApplicationContext(), Recomendar.class);
-		 * startActivity(i);
-		 * 
-		 * break;
-		 * 
-		 * 
-		 * case R.id.botonaleatorio: aleatorio.setPressed(true);
-		 * ultimos.setPressed(false);
-		 * 
-		 * break;
-		 */
+	// viewPager.setCurrentItem(pagina, true);
+	/*
+	 * case R.id.botonsugerir:
+	 * 
+	 * Intent i = new Intent(getApplicationContext(), Recomendar.class);
+	 * startActivity(i);
+	 * 
+	 * break;
+	 * 
+	 * 
+	 * case R.id.botonaleatorio: aleatorio.setPressed(true);
+	 * ultimos.setPressed(false);
+	 * 
+	 * break;
+	 */
+	// }
 
-		}
-	}
+	// }
 
 	// **private class MyAdapter extends FragmentPagerAdapter{
 
@@ -656,7 +673,7 @@ public class Recomendaciones extends SherlockFragmentActivity implements
 	// **return frags.length;
 	// **}
 
-	// **}
+	// } //del on click
 
 	public void getRecomendaciones() {
 
