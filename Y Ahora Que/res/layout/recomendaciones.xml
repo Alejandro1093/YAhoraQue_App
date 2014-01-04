@@ -70,6 +70,8 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/flechaderecha" />
 
+               
+        
         <Button
             android:id="@+id/flechaizquierda2"
             android:layout_width="23dp"

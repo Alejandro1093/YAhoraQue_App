@@ -14,5 +14,11 @@
         android:orderInCategory="0"
         android:showAsAction="always"
         android:title="Sube una sugerencia"/>
+    <item
+        android:id="@+id/recomendar"
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="0"
+        android:showAsAction="always"
+        android:title="Sube una sugerencia"/>
 
 </menu>

@@ -245,7 +245,9 @@
         android:background="@drawable/botoncompartir" /> -->
         
 
-     <!--  Botones de arriba -->
+	<!-- OCULTAR BOTONES -->
+	
+     <!--  Botones de arriba --> 
     
     <Button
         android:id="@+id/bspam1pag3"
@@ -255,7 +257,8 @@
 		android:layout_alignRight="@+id/recom2pag3"
 		android:layout_marginBottom="11dp"
 		android:layout_marginRight="2dp"
-        android:background="@drawable/botonspam" />
+        android:background="@drawable/botonspam"
+        android:visibility="invisible" />
     
     <Button
         android:id="@+id/bnomegusta1pag3"
@@ -264,7 +267,8 @@
         android:layout_alignBottom="@+id/bspam1pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bspam1pag3"
-        android:background="@drawable/botonnomegusta" />
+        android:background="@drawable/botonnomegusta"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/bmegusta1pag3"
@@ -273,9 +277,10 @@
         android:layout_alignBottom="@+id/bnomegusta1pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bnomegusta1pag3"
-        android:background="@drawable/botonmegusta" />
+        android:background="@drawable/botonmegusta"
+        android:visibility="invisible" />
     
-    <!--  Botones de en medio -->
+    <!--  Botones de en medio --> 
     
      <Button
         android:id="@+id/bspam2pag3"
@@ -285,7 +290,8 @@
 		android:layout_alignRight="@+id/recom2pag3"
 		android:layout_marginBottom="11dp"
 		android:layout_marginRight="2dp"
-        android:background="@drawable/botonspam" />
+        android:background="@drawable/botonspam" 
+        android:visibility="invisible"/>
     
     <Button
         android:id="@+id/bnomegusta2pag3"
@@ -294,7 +300,8 @@
         android:layout_alignBottom="@+id/bspam2pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bspam2pag3"
-        android:background="@drawable/botonnomegusta" />
+        android:background="@drawable/botonnomegusta" 
+        android:visibility="invisible"/>
 
     <Button
         android:id="@+id/bmegusta2pag3"
@@ -303,9 +310,10 @@
         android:layout_alignBottom="@+id/bnomegusta2pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bnomegusta2pag3"
-        android:background="@drawable/botonmegusta" />
+        android:background="@drawable/botonmegusta" 
+        android:visibility="invisible"/>
     
-     <!--  Botones de hasta abajo -->
+     <!--  Botones de hasta abajo --> 
     
      <Button
         android:id="@+id/bspam3pag3"
@@ -315,7 +323,8 @@
 		android:layout_alignRight="@+id/recom2pag3"
 		android:layout_marginBottom="11dp"
 		android:layout_marginRight="2dp"
-        android:background="@drawable/botonspam" />
+        android:background="@drawable/botonspam"
+        android:visibility="invisible" />
     
     <Button
         android:id="@+id/bnomegusta3pag3"
@@ -324,7 +333,8 @@
         android:layout_alignBottom="@+id/bspam3pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bspam3pag3"
-        android:background="@drawable/botonnomegusta" />
+        android:background="@drawable/botonnomegusta"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/bmegusta3pag3"
@@ -333,8 +343,7 @@
         android:layout_alignBottom="@+id/bnomegusta3pag3"
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@+id/bnomegusta3pag3"
-        android:background="@drawable/botonmegusta" />
-    
-
+        android:background="@drawable/botonmegusta"
+        android:visibility="invisible" />
 
 </RelativeLayout>
