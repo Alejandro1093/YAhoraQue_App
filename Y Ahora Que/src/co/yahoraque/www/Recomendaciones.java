@@ -134,7 +134,7 @@ public class Recomendaciones extends SherlockFragmentActivity {
 		// BOTONES FLECHA
 		// Derecha
 		flechaderecha = (Button) findViewById(R.id.flechaderecha2);
-			//Al hacer click
+		// Al hacer click
 		flechaderecha.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -146,18 +146,17 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 		// Izquierda
 		flechaizquierda = (Button) findViewById(R.id.flechaizquierda2);
-			//Al hacer click
+		// Al hacer click
 		flechaizquierda.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				//Cambia a la pagina de la izquierda con animacion
+				// Cambia a la pagina de la izquierda con animacion
 				viewPager.setCurrentItem(PAGE_LEFT, true);
 				return true;
 			}
 		});
-		
-		
-		//ViewPgar Setup
+
+		// ViewPgar Setup
 		mInflater = getLayoutInflater();
 		MyagerAdaper adapter = new MyagerAdaper();
 
@@ -484,12 +483,32 @@ public class Recomendaciones extends SherlockFragmentActivity {
 		return true;
 	}
 
+	// OnClick Botones del ActionBar
 	public boolean onOptionsItemSelected(MenuItem item) {
 
-		Intent i = new Intent(getApplicationContext(), Recomendar.class);
-		startActivity(i);
+		switch (item.getItemId()) {
+		// Recomendar
+		case R.id.recomendar:
 
-		return true;
+			Intent i = new Intent(getApplicationContext(), Recomendar.class);
+			startActivity(i);
+
+			return true;
+			// Refrescar
+		case R.id.refrescar:
+
+			new LoadAllProducts().execute();
+
+			return true;
+			// Feedback
+		case R.id.feedback:
+
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+
+		}
 
 	}
 
@@ -825,6 +844,7 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 			contadorPaginas = 1;
 			segundaPagina = true;
+			viewPager.setCurrentItem(PAGE_LEFT, true);
 
 			/*
 			 * if(contadorSugerencias>products.length() ||
