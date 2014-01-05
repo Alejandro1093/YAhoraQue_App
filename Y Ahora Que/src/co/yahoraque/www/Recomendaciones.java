@@ -42,6 +42,8 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 	private LayoutInflater mInflater;
 	private int mSelectedPageIndex = 1;
+	//To know if need to run soft page turn when start/refresh
+	private Boolean firstLoad = true;
 	// we save each page in a model
 	private PageModel[] mPageModel = new PageModel[3];
 
@@ -502,6 +504,8 @@ public class Recomendaciones extends SherlockFragmentActivity {
 			return true;
 			// Feedback
 		case R.id.feedback:
+			Intent j = new Intent(getApplicationContext(), Feedback.class);
+			startActivity(j);
 
 			return true;
 
@@ -726,7 +730,7 @@ public class Recomendaciones extends SherlockFragmentActivity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Recomendaciones.this);
-			pDialog.setMessage("Descargando contenido.");
+			pDialog.setMessage("Descargando contenido");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -844,7 +848,12 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 			contadorPaginas = 1;
 			segundaPagina = true;
-			viewPager.setCurrentItem(PAGE_LEFT, true);
+			
+			if (firstLoad == true) {
+				viewPager.setCurrentItem(PAGE_MIDDLE, false);
+				firstLoad = false;
+			}
+			else viewPager.setCurrentItem(PAGE_LEFT, true);
 
 			/*
 			 * if(contadorSugerencias>products.length() ||

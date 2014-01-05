@@ -58,6 +58,12 @@ public class Recomendar extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.recomendar);
 
+		/* ACTION BAR SHERLOCK
+		getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+		getSupportActionBar().setHomeButtonEnabled(false);
+		getSupportActionBar().setDisplayShowHomeEnabled(false);
+		getSupportActionBar().setDisplayShowTitleEnabled(false);*/
+
 		edtitulo = (EditText) findViewById(R.id.titulosugerencia);
 		eddescripcion = (EditText) findViewById(R.id.descripcionsugerencia);
 		longitudTitulo = (TextView) findViewById(R.id.longitudTitulo);
@@ -75,7 +81,6 @@ public class Recomendar extends Activity {
 		final Button interior = (Button) findViewById(R.id.botoninterior2);
 		final Button exterior = (Button) findViewById(R.id.botonexterior2);
 
-		sugerir.setClickable(false);
 
 		// Al pulsar el boton Dia
 		dia.setOnTouchListener(new View.OnTouchListener() {
@@ -223,6 +228,36 @@ public class Recomendar extends Activity {
 		});
 	}
 
+	/* ActionBar Sherlock Buttons
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getSupportMenuInflater().inflate(R.menu.soloenviar, menu);
+		return true;
+	}
+
+	// OnClick Botones del ActionBar
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+		// Enviar
+		case R.id.soloenviar:
+
+			new CreateNewProduct().execute();
+			Intent i = new Intent(getApplicationContext(),
+					Recomendaciones.class);
+			startActivity(i);
+			Toast.makeText(Recomendar.this,
+					"¡Gracias, se ha enviado tu sugerencia!",
+					Toast.LENGTH_SHORT).show();
+
+		default:
+			return super.onOptionsItemSelected(item);
+
+		}
+
+	}*/
+
 	/**
 	 * Background Async Task to Create new recommendation
 	 * */
@@ -326,7 +361,7 @@ public class Recomendar extends Activity {
 		public void onTextChanged(CharSequence s, int start, int before,
 				int count) {
 			// This sets a textview to the current length
-			longitudTitulo.setText(""+String.valueOf(s.length()) + "/30");
+			longitudTitulo.setText("" + String.valueOf(s.length()) + "/30");
 		}
 
 		public void afterTextChanged(Editable s) {
@@ -342,7 +377,8 @@ public class Recomendar extends Activity {
 		public void onTextChanged(CharSequence s, int start, int before,
 				int count) {
 			// This sets a textview to the current length
-			longitudDescripcion.setText(""+String.valueOf(s.length()) + "/70");
+			longitudDescripcion
+					.setText("" + String.valueOf(s.length()) + "/70");
 		}
 
 		public void afterTextChanged(Editable s) {

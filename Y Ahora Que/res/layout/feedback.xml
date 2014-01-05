@@ -5,8 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/fondo_1"
     android:fillViewport="true"
-    android:fitsSystemWindows="true"
-    android:gravity="center" >
+    android:fitsSystemWindows="true" >
 
     <ImageView
         android:id="@+id/bordernaranja"
@@ -17,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_marginTop="3dp"
         android:orientation="vertical"
         android:padding="10dip" >
@@ -30,57 +29,46 @@
             android:src="@drawable/yahoraque2" />
 
         <TextView
-            android:id="@+id/longitudTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginBottom="-12dp"
-            android:text="0/30" />
-
-        <EditText
-            android:id="@+id/titulosugerencia"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dip"
-            android:layout_marginTop="15dip"
-            android:hint="Título de la sugerencia"
-            android:maxLength="30"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/longitudDescripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="-12dp"
-            android:text="0/70" />
-
-        <EditText
-            android:id="@+id/descripcionsugerencia"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Descripción"
-            android:maxLength="70"
-            android:maxLines="5"
-            android:singleLine="false" />
-
-        <TextView
-            android:id="@+id/instruccionesSpinner"
+            android:id="@+id/instruccionesFeedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:text="Selecciona una categoría." />
+            android:text="&apos;¿Y Ahora Qué?&apos; se encuentra aún en una etapa muy temprana y tus comentarios, querido usuario, son muy importantes para nosotros.
+¡Envíanos tu retroalimentación y así podremos brindante un mejor producto En Salsa Verde!"
+            android:textSize="16dp" />
 
-        <Spinner
-            android:id="@+id/spinnercategoria"
+        <TextView
+            android:id="@+id/longitudFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:text="0/300" />
+
+        <EditText
+            android:id="@+id/editfeedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/categorias"
-            android:prompt="@string/seleccionarcategoria" />
+            android:hint="Inserte feedback poderoso aquí."
+            android:maxLength="300" />
 
-        <include layout="@layout/botones_recomendar" />
+        <Button
+            android:id="@+id/botonenviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/botonexterior2"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/botonenviar" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bordernaranja2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/bordernaranja" />
 
 </RelativeLayout>

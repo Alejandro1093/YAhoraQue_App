@@ -9,6 +9,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.animation.TimeInterpolator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -22,7 +23,13 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookOperationCanceledException;
@@ -63,13 +70,15 @@ public class Login extends Activity implements OnClickListener {
 	private static final String TAG_SUCCESS = "success";
 
 	// Animation
-	//Animation animFadeOut;W
+	// Animation animFadeOut;W
 
 	// Unique PagerAdapter
 	TutoPagerAdapter adapter = new TutoPagerAdapter();
 
 	// ViewPager Tutorial
 	ViewPager myPager = null;
+	// Imagen de mano a animar
+	ImageView manoflecha;
 
 	private enum PendingAction {
 		NONE, POST_PHOTO, POST_STATUS_UPDATE
@@ -108,6 +117,17 @@ public class Login extends Activity implements OnClickListener {
 
 		// El Shared Preferences pasado
 		// sp = getPreferences(MODE_PRIVATE);
+
+		/*
+		 * ANIMATIONS
+		 * 
+		 * manoflecha = (ImageView) findViewById(R.id.tutomano); //Declaro
+		 * Animacion RotateAnimation anim = new RotateAnimation(0f, 350f, 15f,
+		 * 15f); anim.setInterpolator(new LinearInterpolator());
+		 * anim.setRepeatCount(Animation.INFINITE); anim.setDuration(700);
+		 * //Ejecuto Animacion
+		 *manoflecha.setAnimation(anim);
+		 */
 
 		Button flechaderecha = (Button) findViewById(R.id.flechaderecha1);
 		flechaderecha.setOnClickListener(this);
@@ -350,7 +370,8 @@ public class Login extends Activity implements OnClickListener {
 		protected void onPostExecute(String file_url) {
 			// dismiss the dialog once done
 			pDialog.dismiss();
-			Intent i = new Intent(getApplicationContext(), Recomendaciones.class);
+			Intent i = new Intent(getApplicationContext(),
+					Recomendaciones.class);
 			startActivity(i);
 
 		}
@@ -372,7 +393,8 @@ public class Login extends Activity implements OnClickListener {
 
 		if (enableButtons && user != null) {
 			// profilePictureView.setProfileId(user.getId());
-			Intent i = new Intent(getApplicationContext(), Recomendaciones.class);
+			Intent i = new Intent(getApplicationContext(),
+					Recomendaciones.class);
 			startActivity(i);
 
 		} else {
