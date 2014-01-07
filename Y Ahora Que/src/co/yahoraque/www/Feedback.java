@@ -42,11 +42,9 @@ public class Feedback extends Activity {
 	private static final String TAG_SUCCESS = "success";
 
 	public static String correo = null;
-	public static String fb_id = null;
 
 	// Shared Preferences
-	private final String USER_NAME = "username";
-	private final String FB_ID = "fb_id";
+	private final String MAIL = "correo";
 
 	// SharedPreferences myPrefs = this.getSharedPreferences("myPrefs",
 	// MODE_WORLD_READABLE);
@@ -196,7 +194,7 @@ public class Feedback extends Activity {
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
 
-		fb_id = sp.getString(FB_ID, null);
+		correo = sp.getString(MAIL, null);
 
 	}
 

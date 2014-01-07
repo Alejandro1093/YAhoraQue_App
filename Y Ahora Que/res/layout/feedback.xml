@@ -36,6 +36,7 @@
             android:layout_marginTop="10dp"
             android:text="&apos;¿Y Ahora Qué?&apos; se encuentra aún en una etapa muy temprana y tus comentarios, querido usuario, son muy importantes para nosotros.
 ¡Envíanos tu retroalimentación y así podremos brindante un mejor producto En Salsa Verde!"
+            android:textColor="#fff"
             android:textSize="16dp" />
 
         <TextView
@@ -44,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="5dp"
-            android:text="0/300" />
+            android:text="0/300"
+            android:textColor="#fff" />
 
         <EditText
             android:id="@+id/editfeedback"

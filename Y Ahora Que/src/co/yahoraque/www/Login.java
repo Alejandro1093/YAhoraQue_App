@@ -30,6 +30,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookOperationCanceledException;
@@ -42,10 +43,7 @@ import com.facebook.model.GraphObject;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
-public class Login extends Activity implements OnClickListener {
-
-	private final String USER_NAME = "username";
-	private final String FB_ID = "fb_id";
+public class Login extends Activity implements OnClickListener {			
 	private static final List<String> PERMISSIONS = Arrays
 			.asList("email, user_relationshipsrelationship_status");
 	// private final String PENDING_ACTION_BUNDLE_KEY =
@@ -54,11 +52,14 @@ public class Login extends Activity implements OnClickListener {
 	private GraphUser user;
 	private PendingAction pendingAction = PendingAction.NONE;
 	int pager;
+	
+	private final String FIRSTNAME = "first_name";
+	private final String FBID = "fb_id";
+	private final String MAIL = "correo";
+	private final String BIRTHDAY = "cumple";
+	private final String SEX = "sexo";
+	private final String RELATIONSHIP = "situacion_sentimental";
 
-	// Creates an xml if not exists
-	// SharedPreferences myPrefs = this.getSharedPreferences("myPrefs",
-	// MODE_WORLD_READABLE);
-	// SharedPreferences.Editor prefsEditor = myPrefs.edit();
 
 	// url to check if user exists and/or create a new one
 	private static String url_get_user = "http://ensalsaverdeco.domain.com/yahoraqueusuarios/get_user.php";
@@ -115,9 +116,6 @@ public class Login extends Activity implements OnClickListener {
 		myPager.setAdapter(adapter);
 		myPager.setCurrentItem(0);
 
-		// El Shared Preferences pasado
-		// sp = getPreferences(MODE_PRIVATE);
-
 		/*
 		 * ANIMATIONS
 		 * 
@@ -155,10 +153,9 @@ public class Login extends Activity implements OnClickListener {
 				});
 		loginButton.setReadPermissions(Arrays.asList("email", "user_birthday",
 				"user_relationships"));
+		
 
-		// facelogin.setOnClickListener(this);
-
-		// load animations(s)
+		// LOAD AMINATION
 		/*
 		 * animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(),
 		 * R.anim.fade_out);
@@ -169,20 +166,11 @@ public class Login extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-
-		// myPager.setAdapter(adapter);
-		// myPager.setCurrentItem(0);
+		
 		pager = myPager.getCurrentItem();
 
 		switch (v.getId()) {
-		/*
-		 * case R.id.buttonLoginLogout:
-		 * 
-		 * Intent i = new Intent(getApplicationContext(), Datos.class);
-		 * startActivity(i);
-		 * 
-		 * break;
-		 */
+
 		case R.id.flechaderecha1:
 
 			if (pager == 3) {
@@ -244,6 +232,7 @@ public class Login extends Activity implements OnClickListener {
 		uiHelper.onDestroy();
 	}
 
+	@SuppressWarnings("deprecation")
 	private void onSessionStateChange(Session session, SessionState state,
 			Exception exception) {
 		if (pendingAction != PendingAction.NONE
@@ -260,6 +249,7 @@ public class Login extends Activity implements OnClickListener {
 		if (state.isOpened()) {
 
 			// Request user data and show the results
+				//This function is Deprecated!
 			Request.executeMeRequestAsync(session,
 					new Request.GraphUserCallback() {
 
@@ -267,22 +257,10 @@ public class Login extends Activity implements OnClickListener {
 						public void onCompleted(GraphUser user,
 								Response response) {
 							if (user != null) {
-								// Display the parsed user info
-								String datos = user.getFirstName()
-										+ user.getBirthday()
-										+ user.getId()
-										+ user.getProperty("email")
-										+ user.getProperty("relationship_status");
-								// greeting.setText(datos);
 
-								// Save SharedPreferences
-								// prefsEditor.putString(USER_NAME,
-								// user.getFirstName());
-								// prefsEditor.putString(FB_ID, user.getId());
-								// prefsEditor.commit();
-
+								//Save data on SharedPreferences
 								savePrefs();
-								new QueryCreateUser().execute();
+								new QueryCreateUser().execute();						
 
 								/*
 								 * Intent i = new
@@ -381,9 +359,13 @@ public class Login extends Activity implements OnClickListener {
 	protected void savePrefs() {
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
-		Editor edit = sp.edit();
-		edit.putString(USER_NAME, user.getFirstName());
-		edit.putString(FB_ID, user.getId());
+		Editor edit = sp.edit(); 
+		edit.putString(FBID, user.getId());
+		edit.putString(FIRSTNAME, user.getFirstName());
+		edit.putString(MAIL, (String) user.getProperty("email"));
+		edit.putString(SEX, (String) user.getProperty("gender"));
+		edit.putString(BIRTHDAY, user.getBirthday());
+		edit.putString(RELATIONSHIP, (String) user.getProperty("relationship_status"));
 		edit.commit();
 	}
 
@@ -392,14 +374,13 @@ public class Login extends Activity implements OnClickListener {
 		boolean enableButtons = (session != null && session.isOpened());
 
 		if (enableButtons && user != null) {
-			// profilePictureView.setProfileId(user.getId());
+
 			Intent i = new Intent(getApplicationContext(),
 					Recomendaciones.class);
 			startActivity(i);
 
 		} else {
-			// profilePictureView.setProfileId(null);
-			// greeting.setText(null);
+
 		}
 	}
 

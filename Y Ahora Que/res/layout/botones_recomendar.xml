@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:text="Condiciones para esta actividad:" />
+        android:text="Condiciones para esta actividad:"
+        android:textColor="#fff" />
 
     <RelativeLayout
         android:layout_width="fill_parent"

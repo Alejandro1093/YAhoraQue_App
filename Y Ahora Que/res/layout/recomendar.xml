@@ -5,15 +5,15 @@
     android:layout_height="fill_parent"
     android:background="@drawable/fondo_1"
     android:fillViewport="true"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true" >
 
     <ImageView
         android:id="@+id/bordernaranja"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/bordernaranja"
-        android:layout_marginTop="-2dp"  />
+        android:layout_marginTop="-2dp"
+        android:src="@drawable/bordernaranja" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,9 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
             android:text="¿Qué es eso que siempre has deseado tener tiempo para hacer?, ¿qué harías en tu día libre perfecto? ¡Compárte tus ideas e inspira a otros a disfrutar su tiempo!"
+            android:textColor="#fff"
             android:textSize="16dp" />
 
         <TextView
@@ -38,7 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginBottom="-12dp"
-            android:text="0/30" />
+            android:text="0/30"
+            android:textColor="#fff" />
 
         <EditText
             android:id="@+id/titulosugerencia"
@@ -56,7 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="-12dp"
-            android:text="0/70" />
+            android:text="0/70"
+            android:textColor="#fff" />
 
         <EditText
             android:id="@+id/descripcionsugerencia"
@@ -74,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:text="Selecciona una categoría." />
+            android:text="Selecciona una categoría."
+            android:textColor="#fff" />
 
         <Spinner
             android:id="@+id/spinnercategoria"
@@ -82,9 +86,7 @@
             android:layout_height="wrap_content"
             android:entries="@array/categorias"
             android:prompt="@string/seleccionarcategoria" />
-
         <include layout="@layout/botones_recomendar" />
-        
     </LinearLayout>
 
 </RelativeLayout>
