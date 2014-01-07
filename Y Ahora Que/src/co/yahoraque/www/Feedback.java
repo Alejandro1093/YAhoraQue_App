@@ -36,11 +36,12 @@ public class Feedback extends Activity {
 	TextView longitudFeedback;
 
 	// url to create new recommendation
-	private static String url_create_product = "http://ensalsaverdeco.domain.com/yahoraquesugerencias/create_product.php";
+	private static String url_create_product = "http://ensalsaverdeco.domain.com/yahoraquefeedback/create_product.php";
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 
+	public static String correo = null;
 	public static String fb_id = null;
 
 	// Shared Preferences
@@ -127,7 +128,7 @@ public class Feedback extends Activity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Feedback.this);
-			pDialog.setMessage("Se está enviando la sugerencia :D");
+			pDialog.setMessage("Enviando retroalimentación");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();
@@ -149,7 +150,7 @@ public class Feedback extends Activity {
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("feedback", feedback));
-			params.add(new BasicNameValuePair("fb_id", fb_id));
+			params.add(new BasicNameValuePair("correo", correo));
 			// params.add(new BasicNameValuePair("id_usuarios", id_usuarios));
 
 			// getting JSON Object

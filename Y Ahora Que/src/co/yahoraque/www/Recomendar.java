@@ -219,7 +219,7 @@ public class Recomendar extends Activity {
 					startActivity(i);
 					Toast.makeText(Recomendar.this,
 							"¡Gracias, se ha enviado tu sugerencia!",
-							Toast.LENGTH_SHORT).show();
+							Toast.LENGTH_LONG).show();
 
 					return true;
 				} else
@@ -270,7 +270,7 @@ public class Recomendar extends Activity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Recomendar.this);
-			pDialog.setMessage("Se está enviando la sugerencia :D");
+			pDialog.setMessage("Teletransportando sugerencia...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();

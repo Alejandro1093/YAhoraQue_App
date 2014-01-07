@@ -42,7 +42,7 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 	private LayoutInflater mInflater;
 	private int mSelectedPageIndex = 1;
-	//To know if need to run soft page turn when start/refresh
+	// To know if need to run soft page turn when start/refresh
 	private Boolean firstLoad = true;
 	// we save each page in a model
 	private PageModel[] mPageModel = new PageModel[3];
@@ -730,7 +730,7 @@ public class Recomendaciones extends SherlockFragmentActivity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Recomendaciones.this);
-			pDialog.setMessage("Descargando contenido");
+			pDialog.setMessage("Actualizando el contenido");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -814,10 +814,14 @@ public class Recomendaciones extends SherlockFragmentActivity {
 					// no products found
 					// Launch Add New product Activity
 					// INNESEARIO LOL
-					Intent i = new Intent(getApplicationContext(), Subir.class);
-					// Closing all previous activities
-					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(i);
+					/*
+					 * La clase Subir ya no existe: //Intent i = new
+					 * 
+					 * Intent(getApplicationContext(), Subir.class); // Closing
+					 * all previous activities
+					 * i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					 * startActivity(i);
+					 */
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -848,12 +852,12 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 			contadorPaginas = 1;
 			segundaPagina = true;
-			
+
 			if (firstLoad == true) {
 				viewPager.setCurrentItem(PAGE_MIDDLE, false);
 				firstLoad = false;
-			}
-			else viewPager.setCurrentItem(PAGE_LEFT, true);
+			} else
+				viewPager.setCurrentItem(PAGE_LEFT, true);
 
 			/*
 			 * if(contadorSugerencias>products.length() ||
