@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import co.ensalsaverde.apps.yahoraque.R;
 
 public class Datos extends Activity {    
 

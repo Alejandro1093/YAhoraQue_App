@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import co.ensalsaverde.apps.yahoraque.R;
 
 public class Feedback extends Activity {
 

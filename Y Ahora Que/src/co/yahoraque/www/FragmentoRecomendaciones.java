@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import co.ensalsaverde.apps.yahoraque.R;
 
 public class FragmentoRecomendaciones extends Fragment {
 	

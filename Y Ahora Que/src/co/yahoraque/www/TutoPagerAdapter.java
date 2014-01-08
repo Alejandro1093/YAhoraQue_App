@@ -7,6 +7,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import co.ensalsaverde.apps.yahoraque.R;
 
 public class TutoPagerAdapter extends PagerAdapter {
 

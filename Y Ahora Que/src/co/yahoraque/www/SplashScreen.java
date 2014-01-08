@@ -7,6 +7,7 @@ import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
+import co.ensalsaverde.apps.yahoraque.R;
  
 public class SplashScreen extends Activity {
  

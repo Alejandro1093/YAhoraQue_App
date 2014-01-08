@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import co.ensalsaverde.apps.yahoraque.R;
 
 public class PageModel extends Activity {
 
