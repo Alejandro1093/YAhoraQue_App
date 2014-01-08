@@ -180,7 +180,6 @@
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="..."
@@ -194,7 +193,6 @@
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="..."
@@ -212,7 +210,6 @@
         android:textColor="#AAA"
         android:text="..."
         android:textSize="15sp"
-        android:layout_above="@+id/button3"
         android:layout_below="@+id/titulo3pag3" /> 
     
      

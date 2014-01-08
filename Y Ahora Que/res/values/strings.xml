@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Y Ahora Que</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_login">¿Y ahora qué?</string>
-    <string name="APP_ID">490621950977660</string>
+    <string name="app_name" translatable="false">Y Ahora Que</string>
+    <string name="menu_settings" translatable="false">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="title_activity_login" translatable="false">¿Y ahora qué?</string>
+    <string name="APP_ID" translatable="false">490621950977660</string>
 
-    <string-array name="categorias">
+    <string-array name="categorias" translatable="false">
         <item>Animales</item>
         <item>Arte</item>
         <item>Belleza</item>
@@ -30,12 +29,12 @@
         <item>Vida Nocturna</item>
     </string-array>
 
-    <string name="seleccionarcategoria">Seleccionar categoría</string>
-    <string name="title_activity_pages_model">PagesModel</string>
+    <string name="seleccionarcategoria" translatable="false">Seleccionar categoría</string>
+    <string name="title_activity_pages_model" translatable="false">PagesModel</string>
     
-    <string name="cancelled">Cancelled</string>
-    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
-    <string name="ok">OK</string>
+    <string name="cancelled" translatable="false">Cancelled</string>
+    <string name="permission_not_granted" translatable="false">Unable to perform selected action because permissions were not granted.</string>
+    <string name="ok" translatable="false">OK</string>
     
 
 </resources>
