@@ -591,19 +591,18 @@ public class Recomendaciones extends SherlockFragmentActivity {
 				((ViewPager) container).addView(rLayout, 0);
 			}
 
-			// RelativeLayout rLayout =
-			// (RelativeLayout)mInflater.inflate(R.layout.fragmento, null);
+			// DEBUGGING PARA SABER QUÉ PÁGINA SE ESTÁ MOSTRANDO?
+
 			TextView textView = (TextView) mInflater.inflate(R.layout.recomen3,
 					null);
 			PageModel currentPage = mPageModel[position];
 			currentPage.textView = textView;
-			textView.setText(currentPage.getText());
-			// container.addView(rLayout);
+			textView.setText(currentPage.getText()); //			
 			return rLayout;
 
 			/*
-			 * ORIGINAL public Object instantiateItem(ViewGroup container, int
-			 * position) { TextView textView =
+			 * ¿QUÉ ERA ESTO? ORIGINAL public Object instantiateItem(ViewGroup
+			 * container, int position) { TextView textView =
 			 * (TextView)mInflater.inflate(R.layout.infinitecontent, null);
 			 * PageModel currentPage = mPageModel[position];
 			 * currentPage.textView = textView;

@@ -212,15 +212,27 @@ public class Recomendar extends Activity {
 		sugerir.setOnTouchListener(new View.OnTouchListener() {
 			public boolean onTouch(View arg0, MotionEvent arg1) {
 				if (arg1.getAction() == 1) {
-
+					
+					//Checar que no estén vacíos los campos
+					String ContenidoTitulo = edtitulo.getText().toString();
+					String ContenidoDescripcion = eddescripcion.getText().toString();
+					
+					if(ContenidoTitulo.matches("") || ContenidoDescripcion.matches("")){
+						Toast.makeText(Recomendar.this, "Faltan datos por llenar :O", Toast.LENGTH_SHORT).show();					    
+					}
+					
+					else {
+						//Enviar Sugerencia
 					new CreateNewProduct().execute();
+						//Regresar a las recomendaciones
 					Intent i = new Intent(getApplicationContext(),
 							Recomendaciones.class);
 					startActivity(i);
 					Toast.makeText(Recomendar.this,
 							"¡Gracias, se ha enviado tu sugerencia!",
 							Toast.LENGTH_LONG).show();
-
+					}
+					
 					return true;
 				} else
 					return false;

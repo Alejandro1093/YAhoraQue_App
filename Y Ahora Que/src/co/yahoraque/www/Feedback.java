@@ -72,8 +72,18 @@ public class Feedback extends Activity {
 		sugerir.setOnTouchListener(new View.OnTouchListener() {
 			public boolean onTouch(View arg0, MotionEvent arg1) {
 				if (arg1.getAction() == 1) {
-
+					
+					//Checar que no esté vacío
+					String ContenidoFeedback = edfeedback.getText().toString();
+					
+					if(ContenidoFeedback.matches("")){
+						Toast.makeText(Feedback.this, "Ingresa una retroalimentación para continuar :)", Toast.LENGTH_SHORT).show();					    
+					}
+					
+					else {
+					//Enviar Feedback
 					new CreateNewProduct().execute();
+					//Iniciar Actividad de Recomendaciones
 					Intent i = new Intent(getApplicationContext(),
 							Recomendaciones.class);
 					startActivity(i);
@@ -82,6 +92,7 @@ public class Feedback extends Activity {
 							"¡Muchas gracias! :') "
 									+ "P.D. No olvides compartir la App con tus amigos.",
 							Toast.LENGTH_LONG).show();
+					}
 
 					return true;
 				} else
@@ -137,12 +148,6 @@ public class Feedback extends Activity {
 		 * */
 		protected String doInBackground(String... args) {
 			String feedback = edfeedback.getText().toString();
-			// String price = inputPrice.getText().toString();
-			// String opcion_1 = "fr�o";
-			// String opcion_2 = "interior";
-			// String opcion_3 = "extremo";
-			// String id_usuarios = "69";
-			// String fb_id= myPrefs.getString(FB_ID, null);
 			loadPrefs();
 
 			// Building Parameters

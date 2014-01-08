@@ -9,7 +9,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.animation.TimeInterpolator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -23,11 +22,6 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -59,10 +53,15 @@ public class Login extends Activity implements OnClickListener {
 	private final String BIRTHDAY = "cumple";
 	private final String SEX = "sexo";
 	private final String RELATIONSHIP = "situacion_sentimental";
+	
+	String first_name, correo, fb_id, sexo, cumple, situacion_sentimental;
+	
+	//"Boolean" To know if user creation was successful
+	int success = 0;
 
 
 	// url to check if user exists and/or create a new one
-	private static String url_get_user = "http://ensalsaverdeco.domain.com/yahoraqueusuarios/get_user.php";
+	private static String url_get_or_create_user = "http://ensalsaverdeco.domain.com/yahoraqueusuarios/get_or_create_user.php";
 	// Progress Dialog
 	private ProgressDialog pDialog;
 	// Json Parse
@@ -256,11 +255,19 @@ public class Login extends Activity implements OnClickListener {
 						@Override
 						public void onCompleted(GraphUser user,
 								Response response) {
-							if (user != null) {
-
+							if (user != null) {								
+								
 								//Save data on SharedPreferences
+								first_name = user.getFirstName();
+								fb_id = user.getId();
+								correo = (String) user.getProperty("email");
+								sexo = (String) user.getProperty("gender");
+								cumple = user.getBirthday();
+								situacion_sentimental = (String) user.getProperty("relationship_status");
+								
 								savePrefs();
-								new QueryCreateUser().execute();						
+								new QueryCreateUser().execute();	
+								
 
 								/*
 								 * Intent i = new
@@ -288,7 +295,7 @@ public class Login extends Activity implements OnClickListener {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Login.this);
-			pDialog.setMessage("Espere un momento por favor.");
+			pDialog.setMessage("Espere un momento por favor");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();
@@ -298,32 +305,29 @@ public class Login extends Activity implements OnClickListener {
 		 * Creating product
 		 * */
 		protected String doInBackground(String... args) {
-			String correo = (String) user.getProperty("email");
-			String sexo = (String) user.getProperty("gender");
-			String cumple = user.getBirthday();
-			String situacion_sentimental = (String) user
-					.getProperty("relationship_status");
-
+			
+			
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("correo", correo));
+			params.add(new BasicNameValuePair("fb_id", fb_id));
 			params.add(new BasicNameValuePair("sexo", sexo));
 			params.add(new BasicNameValuePair("cumple", cumple));
 			params.add(new BasicNameValuePair("situacion_sentimental",
 					situacion_sentimental));
-			// params.add(new BasicNameValuePair("id_usuarios", id_usuarios));
+			
 
 			// getting JSON Object
 			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_get_user, "POST",
+			JSONObject json = jsonParser.makeHttpRequest(url_get_or_create_user, "POST",
 					params);
 
-			// check log cat fro response
+			// check log cat from response
 			Log.d("Create Response", json.toString());
 
 			// check for success tag
 			try {
-				int success = json.getInt(TAG_SUCCESS);
+				success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
 					// successfully created product
@@ -348,39 +352,50 @@ public class Login extends Activity implements OnClickListener {
 		protected void onPostExecute(String file_url) {
 			// dismiss the dialog once done
 			pDialog.dismiss();
-			Intent i = new Intent(getApplicationContext(),
-					Recomendaciones.class);
-			startActivity(i);
+			if (success == 1) {
+				// successfully created product
+				Intent i = new Intent(getApplicationContext(),
+						Recomendaciones.class);
+				startActivity(i);
+				// closing this screen
+				
+			} else {
+				// failed to create product
+				Toast.makeText(Login.this,"¡Uy! Algo salió mal",Toast.LENGTH_LONG).show();
+			}			
 
 		}
 
 	}
 
 	protected void savePrefs() {
-		SharedPreferences sp = PreferenceManager
-				.getDefaultSharedPreferences(this);
+		
+		
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
 		Editor edit = sp.edit(); 
-		edit.putString(FBID, user.getId());
-		edit.putString(FIRSTNAME, user.getFirstName());
-		edit.putString(MAIL, (String) user.getProperty("email"));
-		edit.putString(SEX, (String) user.getProperty("gender"));
-		edit.putString(BIRTHDAY, user.getBirthday());
-		edit.putString(RELATIONSHIP, (String) user.getProperty("relationship_status"));
+		edit.putString(FBID, fb_id);
+		edit.putString(FIRSTNAME, first_name);
+		edit.putString(MAIL, correo);
+		edit.putString(SEX, sexo);
+		edit.putString(BIRTHDAY, cumple);
+		edit.putString(RELATIONSHIP, situacion_sentimental);
 		edit.commit();
+				
 	}
 
+	//Se puede usar para actualizar la interfaz en la misma actividad
 	private void updateUI() {
 		Session session = Session.getActiveSession();
 		boolean enableButtons = (session != null && session.isOpened());
 
-		if (enableButtons && user != null) {
+		if (enableButtons && user != null && success==1) {
 
-			Intent i = new Intent(getApplicationContext(),
+			/*Intent i = new Intent(getApplicationContext(),
 					Recomendaciones.class);
-			startActivity(i);
+			startActivity(i);*/
 
 		} else {
-
+					
 		}
 	}
 
