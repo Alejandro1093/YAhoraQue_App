@@ -1,4 +1,4 @@
-package co.yahoraque.www;
+package co.yahoraque.www.actividades;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +27,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import co.ensalsaverde.apps.yahoraque.R;
+import co.yahoraque.www.JSONParser;
+import co.yahoraque.www.TutoPagerAdapter;
+
 import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Request;
@@ -59,6 +62,8 @@ public class Login extends Activity implements OnClickListener {
 	
 	//"Boolean" To know if user creation was successful
 	int success = 0;
+	//To know if the device is connected to the internet (mobile or wifi) or not
+	int connectionType = 0;
 
 
 	// url to check if user exists and/or create a new one

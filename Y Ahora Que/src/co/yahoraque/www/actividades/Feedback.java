@@ -1,4 +1,4 @@
-package co.yahoraque.www;
+package co.yahoraque.www.actividades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import co.ensalsaverde.apps.yahoraque.R;
+import co.yahoraque.www.JSONParser;
+import co.yahoraque.www.NetworkUtil;
 
 public class Feedback extends Activity {
 
@@ -78,10 +80,22 @@ public class Feedback extends Activity {
 					String ContenidoFeedback = edfeedback.getText().toString();
 					
 					if(ContenidoFeedback.matches("")){
-						Toast.makeText(Feedback.this, "Ingresa una retroalimentación para continuar :)", Toast.LENGTH_SHORT).show();					    
+						Toast.makeText(Feedback.this, "Falta información por llenar :0", Toast.LENGTH_SHORT).show();					    
 					}
 					
 					else {
+						
+						//Checar conexión a internet
+						int status = NetworkUtil.getConnectivityStatus(getBaseContext());
+						
+						if(status == 0){
+							Toast.makeText(Feedback.this,
+									"Error de conexión (por culpa de los aliens)",
+									Toast.LENGTH_LONG).show();
+						}
+						
+						else{
+						
 					//Enviar Feedback
 					new CreateNewProduct().execute();
 					//Iniciar Actividad de Recomendaciones
@@ -93,6 +107,7 @@ public class Feedback extends Activity {
 							"¡Muchas gracias! :') "
 									+ "P.D. No olvides compartir la App con tus amigos.",
 							Toast.LENGTH_LONG).show();
+						}
 					}
 
 					return true;
@@ -138,7 +153,7 @@ public class Feedback extends Activity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(Feedback.this);
-			pDialog.setMessage("Enviando retroalimentación");
+			pDialog.setMessage("Teletransportando retroalimentación...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();

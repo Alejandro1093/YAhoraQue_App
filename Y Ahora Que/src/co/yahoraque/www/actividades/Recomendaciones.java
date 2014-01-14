@@ -1,4 +1,4 @@
-package co.yahoraque.www;
+package co.yahoraque.www.actividades;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +25,13 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import co.ensalsaverde.apps.yahoraque.R;
+import co.yahoraque.www.JSONParser;
+import co.yahoraque.www.NetworkUtil;
+import co.yahoraque.www.PageModel;
+
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -127,9 +132,18 @@ public class Recomendaciones extends SherlockFragmentActivity {
 
 		// Hashmap for ListView
 		productsList = new ArrayList<HashMap<String, String>>();
-
+		
+		//Checar conexión a internet
+		int status = NetworkUtil.getConnectivityStatus(getBaseContext());
+		if(status == 0){
+			Toast.makeText(Recomendaciones.this,
+					"Error de conexión (por culpa de los aliens)",
+					Toast.LENGTH_LONG).show();
+		}
+		else{
 		// Loading products in Background Thread
 		new LoadAllProducts().execute();
+		}
 
 		// Get listview
 		// ListView lv = (ListView)findViewById(R.id.list);
@@ -497,10 +511,21 @@ public class Recomendaciones extends SherlockFragmentActivity {
 			startActivity(i);
 
 			return true;
+			
 			// Refrescar
-		case R.id.refrescar:
+		case R.id.refrescar:	
+			//Checar conexión a internet
+			int status = NetworkUtil.getConnectivityStatus(getBaseContext());
+			
+			if(status == 0){
+				Toast.makeText(Recomendaciones.this,
+						"Error de conexión (por culpa de los aliens)",
+						Toast.LENGTH_LONG).show();
+			}
 
+			else{
 			new LoadAllProducts().execute();
+			}
 
 			return true;
 			// Feedback

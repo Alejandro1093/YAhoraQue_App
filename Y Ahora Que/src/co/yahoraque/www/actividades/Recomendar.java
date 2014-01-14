@@ -1,4 +1,4 @@
-package co.yahoraque.www;
+package co.yahoraque.www.actividades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import co.ensalsaverde.apps.yahoraque.R;
+import co.yahoraque.www.JSONParser;
+import co.yahoraque.www.NetworkUtil;
 
 public class Recomendar extends Activity {
 
@@ -223,6 +225,18 @@ public class Recomendar extends Activity {
 					}
 					
 					else {
+						
+						//Checar conexión a internet
+						int status = NetworkUtil.getConnectivityStatus(getBaseContext());
+						
+						if(status == 0){
+							Toast.makeText(Recomendar.this,
+									"Error de conexión (por culpa de los aliens)",
+									Toast.LENGTH_LONG).show();
+						}
+						
+						else{
+						
 						//Enviar Sugerencia
 					new CreateNewProduct().execute();
 						//Regresar a las recomendaciones
@@ -232,6 +246,7 @@ public class Recomendar extends Activity {
 					Toast.makeText(Recomendar.this,
 							"¡Gracias, se ha enviado tu sugerencia!",
 							Toast.LENGTH_LONG).show();
+						}
 					}
 					
 					return true;

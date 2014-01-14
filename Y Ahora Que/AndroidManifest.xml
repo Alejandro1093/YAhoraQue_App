@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.ensalsaverde.apps.yahoraque"
-    android:versionCode="4"
-    android:versionName="0.5.1" >
+    android:versionCode="5"
+    android:versionName="0.5.2" >
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="19" />
     
     <!--  Solicitud de Permisos  -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!--  Facebook ID Reference  -->
     
@@ -25,14 +26,14 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Styled">
         
-        	<meta-data
+                <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/APP_ID" />
-        	
-        	 <!--  Splash Activity -->
+                
+                 <!--  Splash Activity -->
         
         <activity
-            android:name="co.yahoraque.www.SplashScreen"
+            android:name="co.yahoraque.www.actividades.SplashScreen"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -47,7 +48,7 @@
         <!--  Login Activity -->
 
         <activity
-            android:name="co.yahoraque.www.Login"
+            android:name="co.yahoraque.www.actividades.Login"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"  >
@@ -57,7 +58,7 @@
         <!--  Datos Activity -->
         
         <activity
-            android:name="co.yahoraque.www.Datos"
+            android:name="co.yahoraque.www.actividades.Datos"
             android:label="@string/app_name"
             android:screenOrientation="portrait" 
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -65,7 +66,7 @@
         
         <!--  Recomendaciones Activity -->
         <activity
-            android:name="co.yahoraque.www.Recomendaciones"
+            android:name="co.yahoraque.www.actividades.Recomendaciones"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             </activity>
@@ -73,7 +74,7 @@
         <!--  Recomendar Activity  -->
         
         <activity
-            android:name="co.yahoraque.www.Recomendar"
+            android:name="co.yahoraque.www.actividades.Recomendar"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -82,7 +83,7 @@
         <!--  Feedback Activity  -->
         
         <activity
-            android:name="co.yahoraque.www.Feedback"
+            android:name="co.yahoraque.www.actividades.Feedback"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">

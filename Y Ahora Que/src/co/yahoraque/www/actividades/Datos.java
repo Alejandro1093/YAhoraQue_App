@@ -1,5 +1,5 @@
 
-package co.yahoraque.www;
+package co.yahoraque.www.actividades;
 
 import android.app.Activity;
 import android.content.Intent;
